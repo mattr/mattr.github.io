@@ -23,7 +23,7 @@ twitter_username: TheDreadPirateM
 github_username:  mattr
 
 # Build settings
-markdown: redcarpet #kramdown
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
