@@ -3,7 +3,7 @@ layout: post
 title: Testing Rails Engines with Spina
 ---
 
-As mentioned in the [previous post](/2018/03/29/factory-bot-in-rails-engines/), I've been working on a Rails plugin gem for use in [Spina CMS](http://spinacms.com). After a couple of tweaks (defining factories for users and accounts, since the user is linked to the blog post as an author, and the account is required for the admin controller inheritance) I was ready to start testing again.
+As mentioned in the [previous post](/2018/03/29/factory-bot-in-rails-engine/), I've been working on a Rails plugin gem for use in [Spina CMS](http://spinacms.com). After a couple of tweaks (defining factories for users and accounts, since the user is linked to the blog post as an author, and the account is required for the admin controller inheritance) I was ready to start testing again.
 
 ... and hit a major issue. I kept getting an issue saying `plugins` was not defined.
 ```bash
@@ -31,7 +31,7 @@ end
 ```
 Spina defines themes under `config/initializers/themes`. This doesn't exist in the default app created under `test/dummy`, nor the `spina.rb` initalizer.
 
-So you need to add them to the dummy app to load things correctly. I haven't tried with the rake tasks/rails generators, but you should be able to do it by calling `rails spina:install` from *inside* `test/dummy` (don't do it from the root, or it will install Spina in your engine rather than in the test app). Whichever of the themes you choose, it should match your theme definition in your factory (and so should the site name, for consistency). Or if you want to do it manually, you'll need the following:
+So you need to add them to the dummy app to load things correctly. I haven't tried with the rake tasks/rails generators, but you should be able to do it by calling `rails g spina:install` from *inside* `test/dummy` (don't do it from the root, or it will install Spina in your engine rather than in the test app). Whichever of the themes you choose, it should match your theme definition in your factory (and so should the site name, for consistency). Or if you want to do it manually, you'll need the following:
 
 ```ruby
 # config/initializers/spina.rb

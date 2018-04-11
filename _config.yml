@@ -25,6 +25,7 @@ github_username:  mattr
 # Build settings
 markdown: kramdown
 theme: minima
+# theme: jekyll-theme-basically-basic
 plugins:
   - jekyll-feed
 permalink: :year/:month/:day/:title/
