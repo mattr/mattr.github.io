@@ -3,7 +3,7 @@ layout: post
 title: Testing Rails Engines with Spina
 ---
 
-As mentioned in the [previous post](/2018/03/29/factory-bot-in-rails-engine/), I've been working on a Rails plugin gem for use in [Spina CMS](http://spinacms.com). After a couple of tweaks (defining factories for users and accounts, since the user is linked to the blog post as an author, and the account is required for the admin controller inheritance) I was ready to start testing again.
+As mentioned in the [previous post]({% post_url 2018-03-29-factory-bot-in-rails-engines %}), I've been working on a Rails plugin gem for use in [Spina CMS](http://spinacms.com). After a couple of tweaks (defining factories for users and accounts, since the user is linked to the blog post as an author, and the account is required for the admin controller inheritance) I was ready to start testing again.
 
 ... and hit a major issue. I kept getting an issue saying `plugins` was not defined.
 ```bash
